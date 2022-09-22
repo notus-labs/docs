@@ -15,7 +15,7 @@ const config = {
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "notus-labs",
-  projectName: "notus-docs",
+  projectName: "docs",
   trailingSlash: false,
   i18n: {
     defaultLocale: "en",
