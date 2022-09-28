@@ -102,7 +102,6 @@ fn client(url: &str) -> Result<Client, simple_http::Error> {
     Ok(Client::with_transport(t))
 }
 
-// Demonstrate an example JSON-RCP call against bitcoind.
 fn main() {
     let client = client("localhost:8545").expect("failed to create client");
     let request = client.build_request("ping", &[]);
