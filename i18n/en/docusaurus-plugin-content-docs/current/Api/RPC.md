@@ -30,7 +30,7 @@ const result = await client.request({ method: "ping", params: [2, 2] });
 
 ### Python
 
-[**json-rpc**](https://github.com/explodinglabs/jsonrpcclient) is a Python client for JSONRPC. It can be used to send requests to the node using Python.
+[**json-rpc**](https://github.com/pavlov99/json-rpc) is a Python client for JSONRPC. It can be used to send requests to the node using Python.
 
 ```py
 import requests
@@ -101,7 +101,7 @@ fn client(url: &str) -> Result<Client, simple_http::Error> {
 
     Ok(Client::with_transport(t))
 }
-
+x
 fn main() {
     let client = client("localhost:8545").expect("failed to create client");
     let request = client.build_request("ping", &[]);
