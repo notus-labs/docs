@@ -86,4 +86,33 @@ using (Client rpcClient = new Client(@"http://localhost:8545"))
 // { jsonrpc: '2.0', id: 1, result: [ "pong" ] }
 ```
 
+### Rust
+
+[**rust-jsonrpc**](https://github.com/apoelstra/rust-jsonrpc/) is a Rust client for JSONRPC. It can be used to send requests to the node using Rust.
+
+```rust
+use jsonrpc::Client;
+use jsonrpc::simple_http::{self, SimpleHttpTransport};
+
+fn client(url: &str) -> Result<Client, simple_http::Error> {
+    let t = SimpleHttpTransport::builder()
+        .url(url)?
+        .build();
+
+    Ok(Client::with_transport(t))
+}
+
+// Demonstrate an example JSON-RCP call against bitcoind.
+fn main() {
+    let client = client("localhost:8545").expect("failed to create client");
+    let request = client.build_request("ping", &[]);
+    let response = client.send_request(request).expect("send_request failed");
+
+    // For other commands this would be a struct matching the returned json.
+    let result: u64 = response.result().expect("response is an error, use check_error");
+    println!("requested ping : {}", result);
+}
+// { jsonrpc: '2.0', id: 1, result: [ "pong" ] }
+```
+
 ## Methods
