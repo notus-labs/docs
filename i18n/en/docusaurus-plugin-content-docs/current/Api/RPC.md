@@ -63,8 +63,6 @@ using Newtonsoft.Json.Linq;
 
 using (Client rpcClient = new Client(@"http://localhost:8545"))
 {
-    rpcClient.Headers.Add("X-Application", "MyApplicationKey");
-
     Request request = rpcClient.NewRequest("ping");
     GenericResponse response = rpcClient.Rpc(request);
 
