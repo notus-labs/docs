@@ -54,7 +54,7 @@ for (var i = 0; i < 8; i++) {
 
 ## Second Round
 
-In the second round, the previous values ​​are summed in reverse. In reversed-order; Ripemd160 becomes SHA1, MD5 and Blake2B.
+In the second round, the previous values ​​are summed in reverse. In reversed-order; Ripemd160, SHA1, MD5 and Blake2B.
 
 ```js
 else {
@@ -64,7 +64,7 @@ else {
   }
 ```
 
-## Çıktı
+## Output
 
 If the output is "_Default Hex Text_", the third parameter is given as true. In this way, certain characters are replaced with the ReplaceChar function.
 
